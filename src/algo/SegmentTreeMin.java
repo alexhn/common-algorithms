@@ -1,7 +1,5 @@
 package algo;
 
-import java.util.Arrays;
-
 public class SegmentTreeMin {
 
 	private int[] tree;
@@ -11,7 +9,6 @@ public class SegmentTreeMin {
 		this.tree = new int[input.length * 4];
 		this.n = input.length;
 		buildTree(input, 1, 0, input.length - 1);
-		System.out.println(Arrays.toString(tree));
 	}
 	
 	private void buildTree(int[] input, int v, int left, int right) {
