@@ -1,11 +1,11 @@
 package algo;
 
-public class SegmentTree {
+public class SegmentTreeSum {
 
 	private int[] tree;
 	private int n;
 	
-	public SegmentTree(int[] input) {
+	public SegmentTreeSum(int[] input) {
 		n = input.length;
 		tree = new int[4 * input.length];
 		buildTree(input, 1, 0, input.length - 1);
@@ -22,7 +22,7 @@ public class SegmentTree {
 		}
 	}
 	
-	public int sum(int v, int left, int right, int segmentLeft, int segmentRight) {
+	private int sum(int v, int left, int right, int segmentLeft, int segmentRight) {
 		if (segmentLeft > segmentRight) {
 			return 0;
 		}
@@ -38,7 +38,7 @@ public class SegmentTree {
 		return sum(1, 0, n - 1, left, right);
 	}
 	
-	public void update(int v, int left, int right, int index, int newValue) {
+	private void update(int v, int left, int right, int index, int newValue) {
 		if (left == right) {
 			tree[v] = newValue;
 		} else {
